@@ -1,0 +1,32 @@
+.time-display {
+  font-weight:600;
+  font-size: calc(36px + 10vw);
+  line-height:1;
+  letter-spacing:2px;
+}
+
+.tabs {
+  display:flex;
+  gap:8px;
+  padding:6px;
+  justify-content:center; /* すべて中央揃えで高さ統一 */
+}
+
+.tabBtn {
+  background:transparent;
+  border:none;
+  padding:12px 22px;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  color:#000;
+}
+
+.tabBtn.active{
+  background:#666;
+  color:#fff;
+}
+
+.btn-lap, .btn-reset, #addAlarmBtn {
+  background:#f2f2f2; color:#000; border:1px solid #666;
+}
