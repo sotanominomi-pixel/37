@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>N Clock — Full</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 時間表示 -->
+  <div id="display" class="time-display">00:00:00</div>
+
+  <!-- 速度スライダー（時計モードのみ） -->
+  <div class="slider-box" id="speedSliderBox">
+    <div class="label-row">
+      <div>1日の長さ</div>
+      <div id="labelHours">24 時間</div>
+    </div>
+    <input id="sliderHours" type="range" min="12" max="48" step="1" value="24">
+  </div>
+
+  <!-- タブ -->
+  <div class="tabs" role="tablist" aria-label="mode">
+    <button id="tabClock" class="tabBtn active">時計</button>
+    <button id="tabStopwatch" class="tabBtn">ストップウォッチ</button>
+    <button id="tabAlarm" class="tabBtn">アラーム</button>
+    <button id="tabSettings" class="tabBtn">設定</button>
+  </div>
+
+  <!-- ストップウォッチ -->
+  <div id="stopwatchArea" style="display:none; margin-top:12px; text-align:center;">
+    <div class="controls">
+      <button id="startBtn" class="btn-circle btn-start">Start</button>
+      <button id="lapBtn" class="btn-lap" disabled>Lap</button>
+      <button id="resetBtn" class="btn-reset" disabled>Reset</button>
+    </div>
+    <div class="laps" id="laps"></div>
+  </div>
+
+  <!-- アラーム -->
+  <div id="alarmArea" style="display:none; margin-top:12px; text-align:center;">
+    <input type="time" id="alarmTime">
+    <button id="addAlarmBtn" class="btn-reset">追加</button>
+    <div class="alarm-list" id="alarmList"></div>
+  </div>
+
+  <!-- 設定 -->
+  <div id="settingsArea" style="display:none; margin-top:12px; text-align:center;">
+    <label>
+      <input type="checkbox" id="showSecondsCheckbox">
+      秒数表示
+    </label>
+  </div>
+
+  <div class="footer">設定は自動で保存されます。</div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
